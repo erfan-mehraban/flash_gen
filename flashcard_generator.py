@@ -2,7 +2,7 @@ from googletrans import Translator
 from config import *
 
 translator = Translator()
-all_words = open(input_file_name).read().split()
+all_words = open(input_file_name).read().split("\n")
 translated_words = translator.translate(all_words, dest=dest_lang, src=src_lang)
 result = ""
 for word in translated_words:
