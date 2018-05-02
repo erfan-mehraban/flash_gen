@@ -5,6 +5,8 @@ translator = Translator()
 all_words = open(input_file_name).read().split("\n")
 result = ""
 for index, word in enumerate(all_words):
+    if word.isspace() or word == '':
+        continue
     word = translator.translate(word, dest=dest_lang, src=src_lang)
     result += result_format.format_map({
         "src" : word.origin,
